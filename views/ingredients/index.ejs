@@ -1,0 +1,92 @@
+<% layout('../layout') -%>
+
+<div class="row align-items-center">
+	<div class="col-xs-12">
+		<div class="story-content" style="padding: 30px 0px;">
+			<h1>Captain <span class="sp-2">Cook</span> Ingredients</h1>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-bottom:30px;">
+	<div class="col-md-6">
+		<button id="btnShowAddIngredient" class="genric-btn primary circle arrow">Ajouter un ingrédient <span class="fa fa-plus"></span></button>
+		<div id="divAddIngredient" style="display: none;">
+			<div id="addIngredient" style="margin-bottom: 30px;">
+				<form id="formAddIngredient" enctype="multipart/form-data" method="post" action="/ingredients/addingredient">
+					<div class="form-group">
+						<label for="">Nom</label><br>
+						<input id="inputName" name="name" type="text">
+					</div>
+					
+					<div class="form-group">
+						<label for="">Catégorie</label><br>
+						<input id="inputCategory" name="category" type="text">
+					</div>
+
+					<div class="form-group">
+						<label for="">Calories</label><br>
+						<input id="inputCalories" name="calories" type="text">
+					</div>
+
+					<div class="form-group">
+						<label for="">Photo</label>
+						<input id="inputPhoto" type="file" name="photo">
+					</div>
+
+					<button id="btnAddIngredient" class="genric-btn primary circle medium">Ajouter</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="updateIngredientForm">
+			Modifier
+			<div id="divUpdateIngredient" style="display: none;">
+				<div id="updateIngredient" style="margin-bottom: 30px;">
+					<div class="form-group">
+						<label for="">Nom</label><br>
+						<input id="inputUpdateName" type="text">
+					</div>
+					
+					<div class="form-group">
+						<label for="">Catégorie</label><br>
+						<input id="inputUpdateCategory" type="text">
+					</div>
+
+					<div class="form-group">
+						<label for="">Calories</label><br>
+						<input id="inputUpdateCalories" type="text">
+					</div>
+
+
+					<button id="btnUpdateIngredient" class="genric-btn primary circle medium">Modifier</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="progress-table-wrap">
+	<div class="">
+		<table id="ingredientList" class="ingredients-table">
+			<thead>
+				<tr>
+					<th>Photo</th>
+					<th>Nom</th>
+					<th>Categorie</th>
+					<th>Calories</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<script src="javascripts/ingredients/global.js"></script>
