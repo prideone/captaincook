@@ -35,13 +35,11 @@ router.get('/ingredientlist', function(req, res) {
 });
 
 
-/* POST to adduser. */
+/* POST to add an ingredient. */
 router.post('/addingredient', upload.single('photo'), function(req, res) {
   var db = req.db;
   var file = req.file;
   var collection = db.get('ingredients');
-
-  console.log(file);
 
   var ingredient = req.body;
   ingredient.photoname = file.filename;
@@ -54,7 +52,7 @@ router.post('/addingredient', upload.single('photo'), function(req, res) {
 });
 
 
-/* DELETE to deleteuser. */
+/* DELETE to delete ingredient. */
 router.delete('/deleteingredient/:id', function(req, res) {
   var db = req.db;
   var collection = db.get('ingredients');

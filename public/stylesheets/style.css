@@ -10,8 +10,12 @@ a {
 .lead{
 	color: red;
 }
-
-
+.mb-30{
+	margin-bottom: 30px;
+}
+.hidden-element{
+	display: none;
+}
 .ingredients-table{
 	width: 99%;
 	margin-bottom: 30px;

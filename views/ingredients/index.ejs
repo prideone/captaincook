@@ -8,11 +8,11 @@
 	</div>
 </div>
 
-<div class="row" style="margin-bottom:30px;">
+<div class="row mb-30">
 	<div class="col-md-6">
 		<button id="btnShowAddIngredient" class="genric-btn primary circle arrow">Ajouter un ingrédient <span class="fa fa-plus"></span></button>
-		<div id="divAddIngredient" style="display: none;">
-			<div id="addIngredient" style="margin-bottom: 30px;">
+		<div id="divAddIngredient" class="hidden-element">
+			<div id="addIngredient" class="mb-30">
 				<form id="formAddIngredient" enctype="multipart/form-data" method="post" action="/ingredients/addingredient">
 					<div class="form-group">
 						<label for="">Nom</label><br>
@@ -42,8 +42,8 @@
 	<div class="col-md-6">
 		<div class="updateIngredientForm">
 			Modifier
-			<div id="divUpdateIngredient" style="display: none;">
-				<div id="updateIngredient" style="margin-bottom: 30px;">
+			<div id="divUpdateIngredient" class="hidden-element">
+				<div id="updateIngredient" class="mb-30">
 					<div class="form-group">
 						<label for="">Nom</label><br>
 						<input id="inputUpdateName" type="text">
