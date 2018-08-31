@@ -1,23 +1,27 @@
-var createError = require('http-errors');
-var express = require('express');
-var engine = require('ejs-locals');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const engine = require('ejs-locals');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 // database
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/captaincook');
+const mongo = require('mongodb');
+const monk = require('monk');
+let db = monk('localhost:27017/captaincook');
 
+// catch error connection to db
+db.catch(function(err) {
+  console.log(err)
+});
 
 // routers
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var ingredientsRouter = require('./routes/ingredients');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const ingredientsRouter = require('./components/ingredients/ingredients');
 // end routers
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
