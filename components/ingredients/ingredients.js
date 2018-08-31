@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const path    = require('path');
 const multer  = require('multer');
+let ingredientCategoryList = require('../../public/knowledge_base/ingredient_categories.json');
 
 // Define storage properties
 let storage = multer.diskStorage({
@@ -32,6 +33,12 @@ router.get('/ingredientlist', function(req, res) {
   collection.find({},{},function(e,docs){
     res.json(docs);
   });
+});
+
+
+/* GET ingredients category listing. */
+router.get('/ingredient/categorylist', function(req, res) {
+  res.json(ingredientCategoryList);
 });
 
 
